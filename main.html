@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Profile</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="isi">
+        <h1 id="typed-text"></h1>
+        <img src="image/profile_picture.jpg" alt="Profile Picture" class="profile-picture">
+        <div class="konten">
+            <div class="nama">
+                <h1>Tegar Posma Diaz Simanjuntak</h1>
+                <h3>Mahasiswa Teknik Informatika Universitas Padjadjaran</h3>
+            </div>
+
+            <textarea placeholder="Masukkan"></textarea>
+            <button onclick="saveInput()">Submit</button>
+
+            <ul class="social-links">
+                <li class="Github"><a href="https://github.com/TegarSimanjuntak" target="_blank">Github</a></li>
+                <li class="Instagram"><a href="https://Instagram.com/tegar.simanjuntak_" target="_blank">Instagram</a></li>
+                <li class="LinkedIn"><a href="https://www.linkedin.com/in/tegar-simanjuntak" target="_blank">LinkedIn</a></li>
+            </ul>
+
+            <p id="thanksMessage"></p>
+        </div>
+    </div>
+    <script>
+        // Typed effect for "Hello"
+        let text = "Hello kids";
+        let index = 0;
+
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById('typed-text').innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 200);
+            } else {
+                // Jika sudah mencapai akhir teks, ulangi dari awal
+                index = 0;
+                document.getElementById('typed-text').innerHTML = '';
+                setTimeout(typeEffect, 200);
+            }
+        }
+
+        typeEffect();
+
+        // Parallax scrolling effect
+        window.addEventListener('scroll', function () {
+            let offset = window.pageYOffset;
+            document.body.style.backgroundPositionY = offset * 0.7 + "px";
+        });
+
+        // Save input and show thank you message
+        function saveInput() {
+            let inputText = document.querySelector('textarea').value;
+            document.getElementById('thanksMessage').innerHTML = `Terimakasih atas masukkannya: ${inputText}`;
+            document.querySelector('textarea').value = '';
+        }
+    </script>
+</body>
+</html>
