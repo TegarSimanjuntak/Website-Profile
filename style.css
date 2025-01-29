@@ -80,11 +80,8 @@
     .home-content p{
         font-size: 1.6rem;
     }
-    .home-img{
-        margin-top: 30px;
-    }
     .home-img img{
-        margin-top: 100px;
+        margin-top: 30px;
         max-width: 850px; /* Batas maksimum */
         height: auto;
         cursor: pointer;
