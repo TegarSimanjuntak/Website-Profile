@@ -82,8 +82,8 @@
     }
     
     .home-img img{
-        margin-top: -100px;
-        max-width: 900px; /* Batas maksimum */
+
+        max-width: 850px; /* Batas maksimum */
         height: auto;
         cursor: pointer;
         transition: 0.2s linear;
